@@ -1,122 +1,118 @@
-/* === ベース設定 === */
 body {
-  background-color: #ff99cc;  /* 明るめピンク */
-  background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
-  background-repeat: repeat;
-  font-family: "MS PGothic", sans-serif;
-  font-size: 14px;
-  color: #fff;
+  background-color: #ad0017;
+  background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
+  font-family: "MS PGothic", "Hiragino Kaku Gothic ProN", sans-serif;
+  color: #333;
   margin: 0;
   padding: 0;
 }
 
-/* === ヘッダー（タイトル） === */
-h1 {
-  font-size: 42px;
-  text-align: center;
-  color: #ffffff;
-  background-color: #cc0088;
-  padding: 15px;
-  border: 3px solid #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #ffccff;
-  font-weight: bold;
-  text-shadow: 2px 2px 3px #000000;
+.container {
+  max-width: 800px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border: 4px double #cc66cc;
+  box-shadow: 0 0 10px #aaa;
 }
 
-/* === 警告表示 === */
+h1 {
+  font-size: 3em;
+  text-align: center;
+  background: linear-gradient(to right, #ff66cc, #66ccff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 1px #fff;
+}
+
+.counter {
+  font-size: 1.3em;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.counter .number {
+  font-size: 2em;
+  font-weight: bold;
+  color: #d9006c;
+  text-shadow: 1px 1px 0 #fff;
+}
+
 .warning {
   text-align: center;
+  color: #ff0033;
   font-weight: bold;
-  font-size: 16px;
-  margin: 10px 0;
-  color: yellow;
-  text-shadow: 1px 1px 2px #000;
+  font-size: 1.1em;
 }
 
-/* === カウンター === */
-.counter {
-  text-align: center;
-  font-weight: bold;
-  font-size: 16px;
-  margin: 10px 0;
-  color: red;
-  text-shadow: 1px 1px 2px #000;
-}
-
-/* === ブログの説明部分 === */
 .intro {
-  background-color: rgba(255, 255, 255, 0.6);
-  color: #000;
-  border: 2px dashed #ff00ff;
+  background: #fff8fc;
+  border: 2px dashed #ff99cc;
   padding: 15px;
-  margin: 20px auto;
-  width: 80%;
+  margin-top: 20px;
 }
 
-/* === キリ番報告セクション === */
-.kiri-section {
-  background-color: #ffffcc;
-  border: 3px dotted #ff00ff;
-  padding: 15px;
-  margin: 30px auto;
-  width: 80%;
-}
-
-.kiri-section h2 {
-  color: #cc00ff;
-  text-shadow: 1px 1px 2px #fff;
-}
-
-/* === コメントフォーム === */
-.comment-form input[type="text"],
-.comment-form textarea {
-  width: 100%;
-  font-family: "MS PGothic", sans-serif;
-  border: 1px solid #ff00ff;
-  padding: 5px;
-  margin-top: 5px;
-  background-color: #fff8ff;
-}
-
-.comment-form input[type="submit"] {
-  font-family: "MS PGothic", sans-serif;
-  background-color: #ffccff;
-  border: 2px solid #ff00ff;
-  padding: 5px 15px;
-  margin-top: 10px;
-  cursor: pointer;
-  box-shadow: 2px 2px 5px #ff99ff;
-}
-
-/* === フッター === */
-.footer {
-  text-align: center;
-  font-size: 12px;
-  color: #fff;
-  margin-top: 30px;
-  text-shadow: 1px 1px #000;
-}
-
-/* === 「謎解き」リンク === */
 .menu-link {
   text-align: center;
-  margin: 20px 0;
+  margin: 30px 0;
 }
 
 .menu-link a {
-  font-size: 18px;
+  font-size: 1.2em;
   font-weight: bold;
-  color: #ffff00;
-  background-color: #cc00cc;
+  color: #3366cc;
+  background: #fff;
   padding: 10px 20px;
+  border: 2px solid #99ccff;
   text-decoration: none;
-  border: 2px solid #fff;
-  box-shadow: 2px 2px 5px #000;
-  display: inline-block;
   border-radius: 8px;
+  box-shadow: 2px 2px 0 #aaa;
+  display: inline-block;
 }
 
 .menu-link a:hover {
-  background-color: #ff00ff;
+  background: #e0f0ff;
+}
+
+.kiri-section {
+  background: #fffdee;
+  border: 2px solid #ffcc66;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+.kiri-section h2 {
+  color: #cc6600;
+  font-weight: bold;
+}
+
+.comment-form input[type="text"],
+.comment-form textarea {
+  width: 90%;
+  margin: 5px 0;
+  padding: 8px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 1em;
+}
+
+.comment-form button {
+  background: #ccffcc;
+  border: 2px solid #66cc66;
+  padding: 8px 16px;
+  font-size: 1em;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.comment-form button:hover {
+  background: #99ff99;
+}
+
+.footer {
+  text-align: center;
+  font-size: 0.9em;
+  color: #666;
+  margin-top: 40px;
 }
