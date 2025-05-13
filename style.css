@@ -1,118 +1,112 @@
+/* === ベース設定 === */
 body {
-  background-color: #ad0017;
-  background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
-  font-family: "MS PGothic", "Hiragino Kaku Gothic ProN", sans-serif;
-  color: #333;
+  background-color: #ff99cc;  /* 明るめピンク */
+  background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+  background-repeat: repeat;
+  font-family: "MS PGothic", sans-serif;
+  font-size: 14px;
+  color: #fff;
   margin: 0;
   padding: 0;
 }
 
-.container {
-  max-width: 800px;
-  margin: auto;
-  background: rgba(255, 255, 255, 0.9);
-  padding: 30px;
-  border: 4px double #cc66cc;
-  box-shadow: 0 0 10px #aaa;
-}
-
+/* === ヘッダー（タイトル） === */
 h1 {
-  font-size: 3em;
+  font-size: 42px;
   text-align: center;
-  background: linear-gradient(to right, #ff66cc, #66ccff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 10px;
-  text-shadow: 1px 1px 1px #fff;
-}
-
-.counter {
-  font-size: 1.3em;
-  text-align: center;
-  margin: 10px 0;
-}
-
-.counter .number {
-  font-size: 2em;
-  font-weight: bold;
-  color: #d9006c;
-  text-shadow: 1px 1px 0 #fff;
-}
-
-.warning {
-  text-align: center;
-  color: #ff0033;
-  font-weight: bold;
-  font-size: 1.1em;
-}
-
-.intro {
-  background: #fff8fc;
-  border: 2px dashed #ff99cc;
+  color: #ffffff;
+  background-color: #cc0088;
   padding: 15px;
-  margin-top: 20px;
-}
-
-.menu-link {
-  text-align: center;
-  margin: 30px 0;
-}
-
-.menu-link a {
-  font-size: 1.2em;
+  border: 3px solid #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ffccff;
   font-weight: bold;
-  color: #3366cc;
-  background: #fff;
-  padding: 10px 20px;
-  border: 2px solid #99ccff;
-  text-decoration: none;
-  border-radius: 8px;
-  box-shadow: 2px 2px 0 #aaa;
-  display: inline-block;
+  text-shadow: 2px 2px 3px #000000;
 }
 
-.menu-link a:hover {
-  background: #e0f0ff;
+/* === カウンターや警告表示 === */
+.counter, .warning {
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 10px 0;
+  color: yellow;
+  text-shadow: 1px 1px 2px #000;
 }
 
+/* === ブログの説明部分 === */
+.intro {
+  background-color: rgba(255, 255, 255, 0.6);
+  color: #000;
+  border: 2px dashed #ff00ff;
+  padding: 15px;
+  margin: 20px auto;
+  width: 80%;
+}
+
+/* === キリ番報告セクション === */
 .kiri-section {
-  background: #fffdee;
-  border: 2px solid #ffcc66;
-  padding: 20px;
-  margin-top: 40px;
+  background-color: #ffffcc;
+  border: 3px dotted #ff00ff;
+  padding: 15px;
+  margin: 30px auto;
+  width: 80%;
 }
 
 .kiri-section h2 {
-  color: #cc6600;
-  font-weight: bold;
+  color: #cc00ff;
+  text-shadow: 1px 1px 2px #fff;
 }
 
+/* === コメントフォーム === */
 .comment-form input[type="text"],
 .comment-form textarea {
-  width: 90%;
-  margin: 5px 0;
-  padding: 8px;
-  border: 1px solid #ccc;
-  background: #fff;
-  font-size: 1em;
+  width: 100%;
+  font-family: "MS PGothic", sans-serif;
+  border: 1px solid #ff00ff;
+  padding: 5px;
+  margin-top: 5px;
+  background-color: #fff8ff;
 }
 
-.comment-form button {
-  background: #ccffcc;
-  border: 2px solid #66cc66;
-  padding: 8px 16px;
-  font-size: 1em;
-  cursor: pointer;
+.comment-form input[type="submit"] {
+  font-family: "MS PGothic", sans-serif;
+  background-color: #ffccff;
+  border: 2px solid #ff00ff;
+  padding: 5px 15px;
   margin-top: 10px;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px #ff99ff;
 }
 
-.comment-form button:hover {
-  background: #99ff99;
-}
-
+/* === フッター === */
 .footer {
   text-align: center;
-  font-size: 0.9em;
-  color: #666;
-  margin-top: 40px;
+  font-size: 12px;
+  color: #fff;
+  margin-top: 30px;
+  text-shadow: 1px 1px #000;
+}
+
+/* === 「謎解き」リンク === */
+.menu-link {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.menu-link a {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffff00;
+  background-color: #cc00cc;
+  padding: 10px 20px;
+  text-decoration: none;
+  border: 2px solid #fff;
+  box-shadow: 2px 2px 5px #000;
+  display: inline-block;
+  border-radius: 8px;
+}
+
+.menu-link a:hover {
+  background-color: #ff00ff;
 }
