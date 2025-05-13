@@ -2,40 +2,58 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>まるてんのブログ</title>
-  <link rel="stylesheet" href="style.css">
+  <title>まるてんの謎解き</title>
+  <style>
+    body {
+      background-color: #ffeeff;
+      font-family: "MS PGothic", sans-serif;
+      color: #000;
+      padding: 20px;
+    }
+    .question {
+      border: 2px dashed #cc00cc;
+      padding: 20px;
+      background-color: #fff;
+    }
+    .terminal {
+      background-color: #000;
+      color: #00ff00;
+      font-family: monospace;
+      padding: 10px;
+      margin-top: 20px;
+      height: 100px;
+      overflow-y: auto;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h1>まるてんのブログ</h1>
 
-    <p class="counter">あなたは <span class="number">73467</span> 人目のお客様です！</p>
-    <p class="warning">⚠️ 踏み逃げ厳禁！足跡残してってね！</p>
+  <h1>まるてんの謎解き 第1問</h1>
 
-    <div class="intro">
-      <p>謎解きが大好きな学生です</p>
-      <p>気ままに更新してます、お楽しみに！</p>
-      <p>お気軽にコメントしていってくださいね☆ミ</p>
-    </div>
+  <div class="question">
+    <p>まるてん①</p>
+    <img src="img/question1.png" alt="謎画像" style="max-width: 100%;"><br><br>
 
-    <div class="menu-link">
-    <a href="nazotoki/index.html">▶ 謎解きはこちら！</a>
-    </div>
-
-    <hr>
-
-    <div class="kiri-section">
-      <h2>🌟 キリ番報告はこちら！🌟</h2>
-      <form class="comment-form">
-        <label>お名前：<input type="text" name="name"></label><br><br>
-        <label>コメント：<br>
-          <textarea name="comment" rows="5" cols="40"></textarea>
-        </label><br><br>
-        <input type="submit" value="送信する（※送信されません）">
-      </form>
-    </div>
-
-    <p class="footer">© 2025 Maruten</p>
+    <label for="answer">答えを入力：</label>
+    <input type="text" id="answer">
+    <button onclick="checkAnswer()">送信</button>
   </div>
+
+  <div class="terminal" id="terminal">
+    // 正解するとここに結果が表示されます
+  </div>
+
+  <script>
+    function checkAnswer() {
+      const input = document.getElementById("answer").value.trim();
+      const terminal = document.getElementById("terminal");
+      if (input === "ひみつのことば") {  // ←正解のキーワードに置き換える
+        terminal.innerText = "正解！　よく気づいたね〜";
+      } else {
+        terminal.innerText = "不正解です。もう一度考えてみよう！";
+      }
+    }
+  </script>
+
 </body>
 </html>
