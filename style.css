@@ -1,121 +1,117 @@
-/* === ベース設定 === */
 body {
-  background-color: #ff99cc;  /* 明るめピンク */
-  background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
-  background-repeat: repeat;
-  font-family: "MS PGothic", sans-serif;
-  font-size: 14px;
-  color: #fff;
   margin: 0;
-  padding: 0;
+  font-family: "MS PGothic", sans-serif;
+  background-color: #fff8f0;
+  color: #333;
+  padding: 20px;
 }
 
-/* === ヘッダー（タイトル） === */
+.container {
+  max-width: 700px;
+  margin: auto;
+  background: #ffffffcc;
+  padding: 20px;
+  border: 3px double #ff66cc;
+  box-shadow: 5px 5px 15px #ffccff;
+}
+
 h1 {
-  font-size: 42px;
+  font-size: 3em;
   text-align: center;
-  color: #ffffff;
-  background-color: #cc0088;
-  padding: 15px;
-  border: 3px solid #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #ffccff;
-  font-weight: bold;
-  text-shadow: 2px 2px 3px #000000;
-}
-
-/* === カウンターや警告表示 === */
-.warning {
-  text-align: center;
-  font-weight: bold;
-  font-size: 16px;
-  margin: 10px 0;
-  color: red;
-  text-shadow: 1px 1px 2px #000;
+  background: linear-gradient(to right, #ff00cc, #3333ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px #ffccff;
+  margin-bottom: 10px;
 }
 
 .counter {
   text-align: center;
+  font-size: 1.3em;
+  margin-bottom: 10px;
+}
+
+.counter .number {
+  font-size: 2.5em;
+  color: #ff0066;
   font-weight: bold;
-  font-size: 16px;
-  margin: 10px 0;
-  color: yellow;
-  text-shadow: 1px 1px 2px #000;
+  text-shadow: 1px 1px 0 #fff, 2px 2px 3px #ff99cc;
 }
 
-/* === ブログの説明部分 === */
+.warning {
+  text-align: center;
+  font-weight: bold;
+  color: #ff3333;
+  font-size: 1.1em;
+  margin-bottom: 20px;
+}
+
 .intro {
-  background-color: rgba(255, 255, 255, 0.6);
-  color: #000;
-  border: 2px dashed #ff00ff;
-  padding: 15px;
-  margin: 20px auto;
-  width: 80%;
-}
-
-/* === キリ番報告セクション === */
-.kiri-section {
-  background-color: #ffffcc;
-  border: 3px dotted #ff00ff;
-  padding: 15px;
-  margin: 30px auto;
-  width: 80%;
-}
-
-.kiri-section h2 {
-  color: #cc00ff;
-  text-shadow: 1px 1px 2px #fff;
-}
-
-/* === コメントフォーム === */
-.comment-form input[type="text"],
-.comment-form textarea {
-  width: 100%;
-  font-family: "MS PGothic", sans-serif;
-  border: 1px solid #ff00ff;
-  padding: 5px;
-  margin-top: 5px;
-  background-color: #fff8ff;
-}
-
-.comment-form input[type="submit"] {
-  font-family: "MS PGothic", sans-serif;
-  background-color: #ffccff;
-  border: 2px solid #ff00ff;
-  padding: 5px 15px;
-  margin-top: 10px;
-  cursor: pointer;
-  box-shadow: 2px 2px 5px #ff99ff;
-}
-
-/* === フッター === */
-.footer {
-  text-align: center;
-  font-size: 12px;
-  color: #fff;
-  margin-top: 30px;
-  text-shadow: 1px 1px #000;
-}
-
-/* === 「謎解き」リンク === */
-.menu-link {
-  text-align: center;
-  margin: 20px 0;
+  font-size: 1.1em;
+  background: #ffffdd;
+  padding: 10px;
+  border: 2px dashed #9999cc;
+  margin-bottom: 20px;
 }
 
 .menu-link a {
-  font-size: 18px;
+  display: block;
+  background-color: #ccffff;
+  padding: 10px;
+  text-align: center;
+  color: #0000cc;
   font-weight: bold;
-  color: #ffff00;
-  background-color: #cc00cc;
-  padding: 10px 20px;
   text-decoration: none;
-  border: 2px solid #fff;
-  box-shadow: 2px 2px 5px #000;
-  display: inline-block;
-  border-radius: 8px;
+  border: 2px solid #00cccc;
+  margin: 20px 0;
+  transition: background-color 0.3s ease;
 }
 
 .menu-link a:hover {
-  background-color: #ff00ff;
+  background-color: #99ffff;
+  color: #ff0066;
+}
+
+.kiri-section {
+  margin-top: 30px;
+  padding: 10px;
+  background: #fdfdff;
+  border: 2px dotted #9999ff;
+}
+
+.comment-form label {
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+  color: #333388;
+}
+
+.comment-form input[type="text"],
+.comment-form textarea {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 1em;
+}
+
+.comment-form button {
+  margin-top: 10px;
+  padding: 8px 15px;
+  background-color: #ffccff;
+  border: 2px solid #ff66cc;
+  font-weight: bold;
+  color: #660066;
+  cursor: pointer;
+}
+
+.comment-form button:hover {
+  background-color: #ffe6ff;
+}
+
+.footer {
+  margin-top: 40px;
+  text-align: center;
+  color: #999;
+  font-size: 0.9em;
 }
