@@ -19,23 +19,34 @@
     </div>
 
     <div class="menu-link">
-    <a href="nazotoki/index.html">▶ 謎解きはこちら！</a>
+      <a href="nazotoki/index.html">▶ 謎解きはこちら！</a>
     </div>
 
     <hr>
 
     <div class="kiri-section">
       <h2>🌟 キリ番報告はこちら！🌟</h2>
-      <form class="comment-form">
-        <label>お名前：<input type="text" name="name"></label><br><br>
-        <label>コメント：<br>
-          <textarea name="comment" rows="5" cols="40"></textarea>
-        </label><br><br>
-        <input type="submit" value="送信する（※送信されません）">
-      </form>
+      <div class="comment-form">
+        <label>名前: <input type="text" id="kiri-name" placeholder="まるてんネーム"></label><br><br>
+        <label>ひとこと: <input type="text" id="kiri-comment" placeholder="例: おめでとう！"></label><br><br>
+        <button onclick="checkKiri()">送信</button>
+      </div>
     </div>
 
     <p class="footer">© 2025 Maruten</p>
   </div>
+
+  <script>
+    function checkKiri() {
+      const name = document.getElementById("kiri-name").value.trim();
+      const comment = document.getElementById("kiri-comment").value.trim();
+
+      if (comment === "まるてん10") {
+        window.location.href = "clear.html?name=" + encodeURIComponent(name);
+      } else {
+        alert("送信しました！（でも内緒の言葉じゃないみたい）");
+      }
+    }
+  </script>
 </body>
 </html>
