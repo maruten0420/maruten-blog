@@ -1,8 +1,10 @@
 body {
-  background-image: url('https://www.transparenttextures.com/patterns/grey-wash-wall.png'); /* 平成感のある壁紙調 */
+  background-color: #ad0017;
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
+  background-repeat: repeat;
   font-family: "MS PGothic", sans-serif;
   font-size: 14px;
-  color: #333;
+  color: #fff;
   margin: 0;
   padding: 0;
 }
