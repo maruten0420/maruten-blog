@@ -1,84 +1,112 @@
+/* 平成ブログ全開！ */
+
 body {
-  background-color: #ad0017;
-  background-image: url('https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png'); /* 平成感のある壁紙調 */
+  background-color: #ff0080;
+  background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+  background-repeat: repeat;
   font-family: "MS PGothic", sans-serif;
   font-size: 14px;
-  color: #333;
+  color: #fff;
   margin: 0;
   padding: 0;
+  animation: bgFlash 5s infinite alternate;
+}
+
+@keyframes bgFlash {
+  0% { background-color: #ff0080; }
+  50% { background-color: #9900cc; }
+  100% { background-color: #ff0080; }
 }
 
 .container {
   width: 800px;
-  margin: 0 auto;
-  background-color: #fff;
-  border: 2px solid #999;
+  margin: 20px auto;
+  background: linear-gradient(135deg, #fff0ff, #ffe0ff);
+  border: 4px double #ff00ff;
   padding: 20px;
-  box-shadow: 5px 5px 15px #888;
+  box-shadow: 0 0 15px #ff00ff, 0 0 30px #ffccff;
+  animation: containerPulse 2s infinite alternate;
+}
+
+@keyframes containerPulse {
+  0% { box-shadow: 0 0 15px #ff00ff, 0 0 30px #ffccff; }
+  100% { box-shadow: 0 0 25px #ff66ff, 0 0 40px #ffffff; }
 }
 
 h1 {
-  font-size: 28px;
-  color: #000080;
+  font-size: 36px;
   text-align: center;
-  text-shadow: 1px 1px #ccc;
-  margin-bottom: 5px;
+  color: #ff00ff;
+  text-shadow: 2px 2px 5px #000;
+  background: linear-gradient(to right, #ff00ff, #ffff00, #00ffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbowText 3s infinite linear;
 }
 
-.counter {
+@keyframes rainbowText {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+.counter, .warning {
+  text-align: center;
+  font-weight: bold;
   font-size: 16px;
-  color: #006400;
-  text-align: center;
-  margin-bottom: 5px;
+  margin: 10px 0;
+  color: yellow;
+  text-shadow: 1px 1px 2px #000;
+  animation: blink 1s infinite alternate;
 }
 
-.number {
-  font-weight: bold;
-  color: red;
-}
-
-.warning {
-  text-align: center;
-  font-weight: bold;
-  color: red;
-  margin-bottom: 20px;
+@keyframes blink {
+  0% { opacity: 1; }
+  100% { opacity: 0.5; }
 }
 
 .intro {
-  background-color: #ffffe0;
-  border: 1px dotted #ccc;
-  padding: 10px;
-  margin-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.6);
+  color: #000;
+  border: 2px dashed #ff00ff;
+  padding: 15px;
+  margin: 20px 0;
 }
 
 .kiri-section {
-  background-color: #e0ffff;
-  border: 1px solid #00cccc;
+  background-color: #ffffcc;
+  border: 3px dotted #ff00ff;
   padding: 15px;
+}
+
+.kiri-section h2 {
+  color: #cc00ff;
+  text-shadow: 1px 1px 2px #fff;
 }
 
 .comment-form input[type="text"],
 .comment-form textarea {
   width: 100%;
   font-family: "MS PGothic", sans-serif;
-  border: 1px solid #999;
+  border: 1px solid #ff00ff;
   padding: 5px;
   margin-top: 5px;
-  background-color: #fff;
+  background-color: #fff8ff;
 }
 
 .comment-form input[type="submit"] {
   font-family: "MS PGothic", sans-serif;
   background-color: #ffccff;
-  border: 1px solid #cc66cc;
-  padding: 5px 10px;
+  border: 2px solid #ff00ff;
+  padding: 5px 15px;
   margin-top: 10px;
   cursor: pointer;
+  box-shadow: 2px 2px 5px #ff99ff;
 }
 
 .footer {
   text-align: center;
   font-size: 12px;
-  color: #999;
+  color: #fff;
   margin-top: 30px;
+  text-shadow: 1px 1px #000;
 }
