@@ -1,0 +1,83 @@
+body {
+  background-image: url('https://www.transparenttextures.com/patterns/grey-wash-wall.png'); /* 平成感のある壁紙調 */
+  font-family: "MS PGothic", sans-serif;
+  font-size: 14px;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 2px solid #999;
+  padding: 20px;
+  box-shadow: 5px 5px 15px #888;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000080;
+  text-align: center;
+  text-shadow: 1px 1px #ccc;
+  margin-bottom: 5px;
+}
+
+.counter {
+  font-size: 16px;
+  color: #006400;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.number {
+  font-weight: bold;
+  color: red;
+}
+
+.warning {
+  text-align: center;
+  font-weight: bold;
+  color: red;
+  margin-bottom: 20px;
+}
+
+.intro {
+  background-color: #ffffe0;
+  border: 1px dotted #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.kiri-section {
+  background-color: #e0ffff;
+  border: 1px solid #00cccc;
+  padding: 15px;
+}
+
+.comment-form input[type="text"],
+.comment-form textarea {
+  width: 100%;
+  font-family: "MS PGothic", sans-serif;
+  border: 1px solid #999;
+  padding: 5px;
+  margin-top: 5px;
+  background-color: #fff;
+}
+
+.comment-form input[type="submit"] {
+  font-family: "MS PGothic", sans-serif;
+  background-color: #ffccff;
+  border: 1px solid #cc66cc;
+  padding: 5px 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.footer {
+  text-align: center;
+  font-size: 12px;
+  color: #999;
+  margin-top: 30px;
+}
