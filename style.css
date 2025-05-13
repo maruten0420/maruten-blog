@@ -1,10 +1,9 @@
 body {
   background-color: #ad0017;
-  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
-  background-repeat: repeat;
+  background-image: url('https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png'); /* 平成感のある壁紙調 */
   font-family: "MS PGothic", sans-serif;
   font-size: 14px;
-  color: #fff;
+  color: #333;
   margin: 0;
   padding: 0;
 }
