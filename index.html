@@ -27,8 +27,8 @@
     <div class="kiri-section">
       <h2>🌟 キリ番報告はこちら！🌟</h2>
       <div class="comment-form">
-        <label>名前: <input type="text" id="kiri-name" placeholder="まるてんネーム"></label><br><br>
-        <label>ひとこと: <input type="text" id="kiri-comment" placeholder="例: おめでとう！"></label><br><br>
+        <label>名前: <input type="text" id="kiri-name" placeholder="ニックネーム"></label><br><br>
+        <label>ひとこと: <input type="text" id="kiri-comment" placeholder="ひとこと"></label><br><br>
         <button onclick="checkKiri()">送信</button>
       </div>
     </div>
@@ -44,7 +44,7 @@
       if (comment === "まるてん10") {
         window.location.href = "clear.html?name=" + encodeURIComponent(name);
       } else {
-        alert("送信しました！（でも内緒の言葉じゃないみたい）");
+        alert("送信しました！");
       }
     }
   </script>
