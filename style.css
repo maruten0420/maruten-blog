@@ -24,13 +24,23 @@ h1 {
   text-shadow: 2px 2px 3px #000000;
 }
 
-/* === カウンターや警告表示 === */
-.counter, .warning {
+/* === 警告表示 === */
+.warning {
   text-align: center;
   font-weight: bold;
   font-size: 16px;
   margin: 10px 0;
   color: yellow;
+  text-shadow: 1px 1px 2px #000;
+}
+
+/* === カウンター === */
+.counter {
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 10px 0;
+  color: red;
   text-shadow: 1px 1px 2px #000;
 }
 
