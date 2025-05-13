@@ -61,9 +61,17 @@
       <!-- 謎 1 -->
       <div class="nazo">
         <h2>まるてん02</h2>
-        <img src="img/picture01.png" alt="謎01の画像">
+        <img src="img/picture01.png" alt="謎02の画像">
         <input type="text" id="answer1" placeholder="ここに答えを入力">
         <button onclick="checkAnswer(1)">答える！</button>
+      </div>
+
+      <!-- 謎 1 -->
+      <div class="nazo">
+        <h2>まるてん03</h2>
+        <img src="img/picture02.png" alt="謎03の画像">
+        <input type="text" id="answer2" placeholder="ここに答えを入力">
+        <button onclick="checkAnswer(2)">答える！</button>
       </div>
 
       <!-- 謎 2（追加したい場合） -->
@@ -84,12 +92,12 @@
   <script>
     const answers = {
       1: ["さしば", "サシバ", "差し歯"]
-      // 2: ["正解2", "別表記"] 追加する場合ここに
+      2: ["かしら", "カシラ", "頭"]
     };
 
     const comments = {
       1: "正解！ 1/n キリ番"
-      // 2: "正解！ 次もがんばって！"
+      2: "正解！ 2/n ひとこと"
     };
 
     function checkAnswer(id) {
