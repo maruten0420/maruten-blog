@@ -53,7 +53,7 @@
     <p><strong>まるてん02</strong></p>
     <img src="img/picture01.png" alt="謎画像1">
     <input type="text" id="answer1" placeholder="ここに答えを入力">
-    <button onclick="checkAnswer('answer1', 'さしば', '1/n キリ番')">送信</button>
+    <button onclick="checkAnswer('answer1', ['さしば', 'サシバ', '差し歯'], '1/n キリ番')">送信</button>
   </div>
 
   <!-- 問題2 -->
@@ -65,12 +65,12 @@
   </div>
 
   <script>
-    function checkAnswer(inputId, correctAnswer, successMessage) {
+    function checkAnswer(inputId, correctAnswers, successMessage) {
       const input = document.getElementById(inputId).value.trim();
-      if (input === correctAnswer) {
+      if (correctAnswers.includes(input)) {
         alert("正解！　" + successMessage);
       } else {
-        alert("不正解です！もう一度考えてみてね");
+        alert("不正解です！");
       }
     }
   </script>
