@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>完全クリア！</title>
+  <style>
+    body {
+      background-color: #ffe6ff;
+      font-family: "MS PGothic", sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      color: #cc00cc;
+      font-size: 2em;
+    }
+    p {
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="congrats"></h1>
+  <p>Discordに「まるてん10 flash」と書いて自慢しよう！</p>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get("name") || "あなた";
+    document.getElementById("congrats").textContent = `${name}さん、完全クリアおめでとう！`;
+  </script>
+</body>
+</html>
