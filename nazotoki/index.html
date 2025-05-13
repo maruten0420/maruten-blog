@@ -10,47 +10,67 @@
       color: #000;
       padding: 20px;
     }
+    h1 {
+      text-align: center;
+      background-color: #cc00cc;
+      color: white;
+      padding: 10px;
+      border-radius: 10px;
+    }
     .question {
       border: 2px dashed #cc00cc;
       padding: 20px;
+      margin: 20px auto;
       background-color: #fff;
+      max-width: 600px;
     }
-    .terminal {
-      background-color: #000;
-      color: #00ff00;
-      font-family: monospace;
-      padding: 10px;
-      margin-top: 20px;
-      height: 100px;
-      overflow-y: auto;
+    .question img {
+      max-width: 100%;
+      display: block;
+      margin-bottom: 10px;
+    }
+    .question input[type="text"] {
+      width: 80%;
+      padding: 5px;
+      font-size: 16px;
+    }
+    .question button {
+      padding: 5px 10px;
+      font-size: 16px;
+      background-color: #ffccff;
+      border: 2px solid #cc00cc;
+      cursor: pointer;
+      margin-left: 5px;
     }
   </style>
 </head>
 <body>
 
-  <h1>まるてんの謎解き 第1問</h1>
+  <h1>まるてんの謎解き</h1>
 
+  <!-- 問題1 -->
   <div class="question">
-    <p>まるてん①</p>
-    <img src="img/question1.png" alt="謎画像" style="max-width: 100%;"><br><br>
-
-    <label for="answer">答えを入力：</label>
-    <input type="text" id="answer">
-    <button onclick="checkAnswer()">送信</button>
+    <p><strong>まるてん02</strong></p>
+    <img src="img/question01.png" alt="謎画像1">
+    <input type="text" id="answer1" placeholder="ここに答えを入力">
+    <button onclick="checkAnswer('answer1', 'さしば', 'よく気づいたね〜')">送信</button>
   </div>
 
-  <div class="terminal" id="terminal">
-    // 正解するとここに結果が表示されます
+  <!-- 問題2 -->
+  <div class="question">
+    <p><strong>まるてん03</strong></p>
+    <img src="img/question02.png" alt="謎画像2">
+    <input type="text" id="answer2" placeholder="ここに答えを入力">
+    <button onclick="checkAnswer('answer2', 'なぞなぞこたえ', 'さすがです！')">送信</button>
   </div>
 
   <script>
-    function checkAnswer() {
-      const input = document.getElementById("answer").value.trim();
-      const terminal = document.getElementById("terminal");
-      if (input === "ひみつのことば") {  // ←正解のキーワードに置き換える
-        terminal.innerText = "正解！　よく気づいたね〜";
+    function checkAnswer(inputId, correctAnswer, successMessage) {
+      const input = document.getElementById(inputId).value.trim();
+      if (input === correctAnswer) {
+        alert("正解！　" + successMessage);
       } else {
-        terminal.innerText = "不正解です。もう一度考えてみよう！";
+        alert("不正解です！もう一度考えてみてね");
       }
     }
   </script>
