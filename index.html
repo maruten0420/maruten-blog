@@ -34,7 +34,10 @@
       <div class="comment-form">
         <label>名前: <input type="text" id="kiri-name" placeholder="ニックネーム"></label><br><br>
         <label>ひとこと: <input type="text" id="kiri-comment" placeholder="ひとこと"></label><br><br>
-        <button onclick="checkKiri()">送信</button>
+        <!--<button onclick="checkKiri()">送信</button>-->
+        <!-- 送信ボタン（index.html内） -->
+        <input type="submit" value="送信する（※送信されません）" onclick="checkClear(); return false;">
+
       </div>
     </div>
 
@@ -68,6 +71,24 @@
       alert("コラッ！F12禁止！");
     }
   });
+</script>
+
+
+  <script>
+  function checkClear() {
+    const name = document.querySelector('[name="name"]').value.trim();
+    const comment = document.querySelector('[name="comment"]').value.trim();
+    if (comment.includes("完全クリア")) {
+      if (name !== "") {
+        localStorage.setItem("maruten_clear_name", name);
+        window.location.href = "clear.html";
+      } else {
+        alert("お名前を入力してください！");
+      }
+    } else {
+      alert("コメント送信ありがとうございます！（※実際には送信されません）");
+    }
+  }
 </script>
 
 </body>
