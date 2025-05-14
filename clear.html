@@ -1,3 +1,5 @@
+<!--
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -30,3 +32,31 @@
   </script>
 </body>
 </html>
+
+-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>完全クリア！</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1 id="message">確認中...</h1>
+  </div>
+
+  <script>
+    const name = localStorage.getItem("maruten_clear_name");
+    if (name) {
+      document.getElementById("message").innerHTML = 
+        `${name}さん、完全クリアおめでとう！<br>Discordに「まるてん10 flash」と書いて自慢しよう！`;
+      localStorage.removeItem("maruten_clear_name");
+    } else {
+      alert("直打ち厳禁だよ！");
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>
+
