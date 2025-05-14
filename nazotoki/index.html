@@ -109,5 +109,21 @@
       }
     }
   </script>
+  <script>
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+    alert("右クリック禁止！答えが書いてあるからね！！");
+  });
+  </script>
+
+  <script>
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "F12" || (e.ctrlKey && e.shiftKey && e.key === "I")) {
+      e.preventDefault();
+      alert("F12禁止！そこまで実行しなくていいから！");
+    }
+  });
+</script>
+
 </body>
 </html>
