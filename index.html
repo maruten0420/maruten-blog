@@ -8,13 +8,13 @@
 <body>
   <div class="container">
     <marquee behavior="scroll" direction="left" scrollamount="5" style="color: yellow; font-weight: bold;">
-      🌟 ようこそ！ まるてんのブログへ！今日も元気に謎解きチャレンジ！ 🌟
+      🌟 まるてんのブログへようこそ！今日も元気に謎解きチャレンジ！ 🌟
     </marquee>
 
     <h1 class="title">まるてんのブログ</h1>
 
     <p class="counter">あなたは <span class="number">73467</span> 人目のお客様です！</p>
-    <p class="warning">⚠️ 踏み逃げ厳禁！足跡残してってね！</p>
+    <p class="warning">⚠️ 踏み逃げ厳禁！ちゃんと足跡残してってね！</p>
 
     <div class="intro">
       <p>謎解きが大好きな学生です|･ω･)ﾉﾔｯﾎｰ</p>
@@ -63,6 +63,21 @@
         alert("コメント送信ありがとうございます！（※実際には送信されません）");
       }
     }
+  </script>
+
+  <script>
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+    alert("右クリック禁止！見ても何も出てこないよ！");
+  });
+  </script>
+  <script>
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "F12" || (e.ctrlKey && e.shiftKey && e.key === "I")) {
+      e.preventDefault();
+      alert("F12もダメ、ズル禁止！");
+    }
+  });
   </script>
 </body>
 </html>
