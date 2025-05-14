@@ -61,5 +61,14 @@
   });
 </script>
 
+  <script>
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "F12" || (e.ctrlKey && e.shiftKey && e.key === "I")) {
+      e.preventDefault();
+      alert("コラッ！F12禁止！");
+    }
+  });
+</script>
+
 </body>
 </html>
