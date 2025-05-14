@@ -7,7 +7,11 @@
 </head>
 <body>
   <div class="container">
-    <h1>まるてんのブログ</h1>
+    <marquee behavior="scroll" direction="right" scrollamount="5" style="color: yellow; font-weight: bold;">
+      🌟 ようこそ！ まるてんのブログへ！今日も元気に謎解きチャレンジ！ 🌟
+    </marquee>
+
+    <h1 class="title">まるてんのブログ</h1>
 
     <p class="counter">あなたは <span class="number">73467</span> 人目のお客様です！</p>
     <p class="warning">⚠️ 踏み逃げ厳禁！足跡残してってね！</p>
@@ -19,10 +23,6 @@
       <p>ソースコードは見ないでね！答えバチバチに書いてあるから(*/ω＼*)</p>
     </div>
 
-    <marquee behavior="alternate" direction="left" scrollamount="5" style="color: black; font-size: 1.2em; font-weight: bold;">
-  ただいま絶賛工事中！　完成をお待ちください！
-  </marquee>
-    
     <div class="menu-link">
       <a href="nazotoki/index.html">▶ 謎解きはこちら！</a>
     </div>
@@ -30,66 +30,35 @@
     <hr>
 
     <div class="kiri-section">
-      <h2>🌟 キリ番報告やコメントはこちらから！🌟</h2>
-      <div class="comment-form">
-        <label>名前: <input type="text" id="kiri-name" placeholder="ニックネーム"></label><br><br>
-        <label>ひとこと: <input type="text" id="kiri-comment" placeholder="ひとこと"></label><br><br>
-        <!--<button onclick="checkKiri()">送信</button>-->
-        <!-- 送信ボタン（index.html内） -->
-        <input type="submit" value="送信する（※送信されません）" onclick="checkClear(); return false;">
-
-      </div>
+      <h2>🌟 キリ番報告はこちら！🌟</h2>
+      <form class="comment-form" onsubmit="checkClear(); return false;">
+        <label>お名前：<input type="text" name="name"></label><br><br>
+        <label>ひとこと：<br>
+          <textarea name="comment" rows="5" cols="40" placeholder="キリ番おめでとう！など"></textarea>
+        </label><br><br>
+        <input type="submit" value="送信する（※送信されません）">
+      </form>
     </div>
 
     <p class="footer">© 2025 Maruten</p>
   </div>
 
   <script>
-    function checkKiri() {
-      const name = document.getElementById("kiri-name").value.trim();
-      const comment = document.getElementById("kiri-comment").value.trim();
+    function checkClear() {
+      const name = document.querySelector('[name="name"]').value.trim();
+      const comment = document.querySelector('[name="comment"]').value.trim();
 
-      if (comment === "まるてん10") {
-        window.location.href = "clear.html?name=" + encodeURIComponent(name);
+      if (comment.includes("完全クリア")) {
+        if (name !== "") {
+          localStorage.setItem("maruten_clear_name", name);
+          window.location.href = "clear.html";
+        } else {
+          alert("お名前を入力してください！");
+        }
       } else {
-        alert("送信しました！");
+        alert("コメント送信ありがとうございます！（※実際には送信されません）");
       }
     }
   </script>
-
-  <script>
-  document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-    alert("右クリック禁止！見ても何も出てこないよ！");
-  });
-</script>
-
-  <script>
-  document.addEventListener("keydown", function(e) {
-    if (e.key === "F12" || (e.ctrlKey && e.shiftKey && e.key === "I")) {
-      e.preventDefault();
-      alert("コラッ！F12禁止！");
-    }
-  });
-</script>
-
-
-  <script>
-  function checkClear() {
-    const name = document.querySelector('[name="name"]').value.trim();
-    const comment = document.querySelector('[name="comment"]').value.trim();
-    if (comment.includes("完全クリア")) {
-      if (name !== "") {
-        localStorage.setItem("maruten_clear_name", name);
-        window.location.href = "clear.html";
-      } else {
-        alert("お名前を入力してください！");
-      }
-    } else {
-      alert("コメント送信ありがとうございます！（※実際には送信されません）");
-    }
-  }
-</script>
-
 </body>
 </html>
