@@ -115,3 +115,27 @@ h1 {
   color: #999;
   font-size: 0.9em;
 }
+
+.sparkle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: radial-gradient(circle, #ffccff 0%, #cc66cc 70%, transparent 100%);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: sparkleMove 1s ease-out forwards;
+  opacity: 0.8;
+  z-index: 9999;
+}
+
+@keyframes sparkleMove {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 0;
+  }
+}
+
