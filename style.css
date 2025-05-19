@@ -128,14 +128,39 @@ h1 {
   z-index: 9999;
 }
 
-@keyframes sparkleMove {
+.plus-trail {
+  position: absolute;
+  font-weight: bold;
+  font-size: 20px;
+  color: #ff0000; /* 初期値（上書きされます） */
+  pointer-events: none;
+  animation: fallWobble 1s ease-out forwards;
+  z-index: 9999;
+}
+
+.plus-trail::before {
+  content: "+";
+  display: inline-block;
+}
+
+@keyframes fallWobble {
   0% {
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) rotate(0deg);
     opacity: 1;
   }
+  25% {
+    transform: translate(-45%, 25%) rotate(5deg);
+  }
+  50% {
+    transform: translate(-55%, 50%) rotate(-5deg);
+  }
+  75% {
+    transform: translate(-45%, 75%) rotate(5deg);
+  }
   100% {
-    transform: translate(-50%, -50%) scale(2);
+    transform: translate(-50%, 100%) rotate(0deg);
     opacity: 0;
   }
 }
+
 
