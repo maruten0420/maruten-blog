@@ -163,4 +163,17 @@ h1 {
   }
 }
 
+.hidden-link {
+  position: absolute;
+  top: 50px; /* 適宜調整 */
+  left: 100px; /* 適宜調整 */
+  color: #fff8f0; /* 背景と同色で見えなくする */
+  text-decoration: none;
+  z-index: 10;
+}
+.hidden-link:hover {
+  color: #ff99cc; /* ホバーで発見しやすくするなど調整可 */
+}
+
+
 
