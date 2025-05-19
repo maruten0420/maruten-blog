@@ -93,7 +93,7 @@
     const now = Date.now();
 
     // 0.1秒（100ms）以上経過していれば実行
-    if (now - lastTrailTime > 100) {
+    if (now - lastTrailTime > 50) {
       lastTrailTime = now;
 
       const plus = document.createElement("div");
