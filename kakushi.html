@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ひみつのページ</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: "MS PGothic", sans-serif;
+      padding: 40px;
+    }
+    .spoiler {
+      font-size: 2em;
+      color: #faa;
+      font-weight: bold;
+    }
+    .invisible-note {
+      color: black;
+    }
+    .nazo-link {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 20px;
+      border: 2px dashed white;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .nazo-link:hover {
+      background-color: white;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <p>…</p>
+  <p>……</p>
+  <p>…………</p>
+
+  <p>あれ！？もしかしてここのページ見えちゃってます！？</p>
+  <p>バレちゃったか～～～</p>
+
+  <p>いや～実はですね？<br>
+  数年ぶりにここのブログのことを思い出したので久々に動かそうとしてたんですよ。<br>
+  ほら、なんか全体的に題材が古っぽかったでしょ？<br>
+  心機一転、最近のネットミームの謎もいっぱい作りたいじゃないですか！</p>
+
+  <p>…それでここのページを作ったまではよかったんですけど……<br>
+  古いサイト無理やり動かしちゃったせいで……</p>
+
+  <p class="spoiler">せっかく作った謎が汚れちゃったんですよ～～～～！！！！</p>
+
+  <p>完成間近だったのに……</p>
+
+  <p>……え？汚れてても良いから謎を見たい？<br>
+  う～～～ん、まあいいですけど、解が出るかは保証できませんからね</p>
+
+  <p>ここの下に謎置き場があるので、そこから入ってください<br>
+  ほとんど整備してないので雰囲気違いますけど、変なことはしてないですから安心してくださいね！</p>
+
+  <a class="nazo-link" href="nazo2.html">→謎置き場</a>
+
+  <p class="invisible-note">(まさか人が来るとは思わなかったから適当に並べちゃったけど、大丈夫だよね？)</p>
+
+  <p style="margin-top: 50px;">Ⓒ2025 Maruten</p>
+
+  <script>
+  // マウスストーカー同様に表示
+  document.addEventListener("mousemove", function(e) {
+    const plus = document.createElement("div");
+    plus.className = "plus-trail";
+
+    const colors = ["#ff0000", "#00cc00", "#0000ff", "#ffff00", "#ff00ff", "#00ffff"];
+    const color = colors[Math.floor(Math.random() * colors.length)];
+    plus.style.color = color;
+
+    plus.style.left = `${e.pageX}px`;
+    plus.style.top = `${e.pageY}px`;
+    document.body.appendChild(plus);
+
+    setTimeout(() => {
+      plus.remove();
+    }, 1000);
+  });
+  </script>
+</body>
+</html>
