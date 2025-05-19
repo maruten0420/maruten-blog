@@ -74,6 +74,34 @@
         <button onclick="checkAnswer(2)">答える！</button>
       </div>
 
+      <div class="nazo">
+        <h2>まるてん04</h2>
+        <img src="img/picture03.PNG" alt="謎04の画像">
+        <input type="text" id="answer3" placeholder="ここに答えを入力">
+        <button onclick="checkAnswer(3)">答える！</button>
+      </div>
+
+      <div class="nazo">
+        <h2>まるてん05</h2>
+        <img src="img/picture04.PNG" alt="謎05の画像">
+        <input type="text" id="answer4" placeholder="ここに答えを入力">
+        <button onclick="checkAnswer(4)">答える！</button>
+      </div>
+
+      <div class="nazo">
+        <h2>まるてん06</h2>
+        <img src="img/picture05.PNG" alt="謎06の画像">
+        <input type="text" id="answer5" placeholder="ここに答えを入力">
+        <button onclick="checkAnswer(5)">答える！</button>
+      </div>
+
+      <div class="nazo">
+        <h2>まるてん07</h2>
+        <img src="img/picture06.PNG" alt="謎07の画像">
+        <input type="text" id="answer6" placeholder="ここに答えを入力">
+        <button onclick="checkAnswer(6)">答える！</button>
+      </div>
+
       <!-- 謎 3（追加したい場合） -->
       <!--
       <div class="nazo">
@@ -92,12 +120,20 @@
   <script>
     const answers = {
       1: ["さしば", "サシバ", "差し歯"],
-      2: ["かしら", "カシラ", "頭"]
+      2: ["かしら", "カシラ", "頭"],
+      3: ["offense", "OFFENSE"],
+      4: ["rail", "RAIL"],
+      5: ["こんぱす", "コンパス"],
+      6: ["おにいさん", "オニイサン", "お兄さん", "御兄さん"]
     };
 
     const comments = {
-      1: "正解！ 1/n キリ番",
-      2: "正解！ 2/n ひとこと"
+      1: "正解！ 1/10 ひてゅ",
+      2: "正解！ 2/10 という",
+      3: "正解！ 3/10 こっり",
+      4: "正解！ 4/10 とてょ",
+      5: "正解！ 5/10 にねく",
+      6: "正解！ 6/10 ゆ！し"
     };
 
     function checkAnswer(id) {
@@ -105,7 +141,7 @@
       if (answers[id].includes(input)) {
         alert(comments[id]);
       } else {
-        alert("ちがうよ〜！もう一度チャレンジ！");
+        alert("残念！もう一度チャレンジ！");
       }
     }
   </script>
