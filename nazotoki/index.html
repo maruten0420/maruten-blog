@@ -126,24 +126,34 @@
 </script>
 
 <script>
+  let lastTrailTime = 0;
+
   document.addEventListener("mousemove", function(e) {
-    const plus = document.createElement("div");
-    plus.className = "plus-trail";
+    const now = Date.now();
 
-    // ランダムな原色
-    const colors = ["#ff0000", "#00cc00", "#0000ff", "#ffff00", "#ff00ff", "#00ffff"];
-    const color = colors[Math.floor(Math.random() * colors.length)];
-    plus.style.color = color;
+    // 0.1秒（100ms）以上経過していれば実行
+    if (now - lastTrailTime > 100) {
+      lastTrailTime = now;
 
-    plus.style.left = `${e.pageX}px`;
-    plus.style.top = `${e.pageY}px`;
-    document.body.appendChild(plus);
+      const plus = document.createElement("div");
+      plus.className = "plus-trail";
 
-    setTimeout(() => {
-      plus.remove();
-    }, 1000); // アニメーション後に削除
+      // ランダムな原色
+      const colors = ["#ff0000", "#00cc00", "#0000ff", "#ffff00", "#ff00ff", "#00ffff"];
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      plus.style.color = color;
+
+      plus.style.left = `${e.pageX - 10}px`;
+      plus.style.top = `${e.pageY - 10}px`;
+      document.body.appendChild(plus);
+
+      setTimeout(() => {
+        plus.remove();
+      }, 1000); // アニメーション後に削除
+    }
   });
 </script>
+
 
 </body>
 </html>
