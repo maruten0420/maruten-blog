@@ -2,23 +2,53 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>ひみつのページ</title>
+  <title>Secret Page</title>
   <link rel="stylesheet" href="style.css">
   <style>
+    :root {
+      --line-spacing: 2.5em; /* 行間の調整値（必要に応じて変更可） */
+    }
+
     body {
       background-color: black;
       color: white;
       font-family: "MS PGothic", sans-serif;
       padding: 40px;
+      text-align: center;
+      line-height: var(--line-spacing);
+      position: relative;
     }
+
+    /* 左右の縦線 */
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background-color: #888;
+      z-index: 0;
+    }
+
+    body::before {
+      left: 20px;
+    }
+
+    body::after {
+      right: 20px;
+    }
+
     .spoiler {
       font-size: 2em;
       color: #faa;
       font-weight: bold;
     }
+
     .invisible-note {
       color: black;
     }
+
     .nazo-link {
       display: inline-block;
       margin-top: 30px;
@@ -28,6 +58,7 @@
       text-decoration: none;
       font-weight: bold;
     }
+
     .nazo-link:hover {
       background-color: white;
       color: black;
@@ -67,7 +98,6 @@
   <p style="margin-top: 50px;">Ⓒ2025 Maruten</p>
 
   <script>
-  // マウスストーカー同様に表示
   document.addEventListener("mousemove", function(e) {
     const plus = document.createElement("div");
     plus.className = "plus-trail";
