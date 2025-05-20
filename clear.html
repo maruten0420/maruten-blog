@@ -38,19 +38,52 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>完全クリア！</title>
+  <title>Clear!!</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      text-align: center;
+      background-color: #fff;
+      color: #000;
+      font-family: sans-serif;
+    }
+
+    .container {
+      margin-top: 100px;
+    }
+
+    #message {
+      display: inline-block;
+      max-width: 90%;
+      font-size: 2em;
+      line-height: 1.8;
+      word-break: keep-all;
+      white-space: nowrap;
+    }
+
+    #nameLine {
+      font-weight: bold;
+      font-size: clamp(1.5em, 5vw, 2.5em); /* 名前長さによって可変 */
+    }
+
+    #discordLine {
+      margin-top: 20px;
+      font-size: 1.2em;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <h1 id="message">確認中...</h1>
+    <div id="message">確認中...</div>
   </div>
 
   <script>
     const name = localStorage.getItem("maruten_clear_name");
     if (name) {
-      document.getElementById("message").innerHTML = 
-        `${name}さん、完全クリアおめでとう！<br>Discordに「まるてん10 flash」と書いて自慢しよう！`;
+      document.getElementById("message").innerHTML = `
+        <div id="nameLine">${name}さん、完全クリアおめでとう！</div>
+        <div id="discordLine">Discordに「まるてんblog Flash」と書いて自慢しよう！</div>
+      `;
       localStorage.removeItem("maruten_clear_name");
     } else {
       alert("直打ち厳禁だよ！");
@@ -59,4 +92,5 @@
   </script>
 </body>
 </html>
+
 
