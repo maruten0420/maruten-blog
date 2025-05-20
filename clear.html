@@ -99,7 +99,7 @@
     const name = localStorage.getItem("maruten_clear_name");
     if (name) {
       document.getElementById("message").innerHTML = `
-        <div id="nameLine">${name}さん、<br>クリアおめでとう！</div>
+        <div id="nameLine">${name}さん<br>クリアおめでとう！</div>
         <div id="discordLine">Discordに「まるてんblog Flash」<br>と書いて自慢しよう！</div>
       `;
       localStorage.removeItem("maruten_clear_name");
