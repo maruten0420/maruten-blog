@@ -48,7 +48,7 @@
         <label>ひとこと：<br>
           <textarea name="comment" rows="5" cols="40" placeholder="キリ番おめでとう！など"></textarea>
         </label><br><br>
-        <input type="submit" value="送信する（※送信されません）">
+        <input type="submit" value="送信する（※実際には送信されません）">
       </form>
     </div>
 
@@ -60,7 +60,7 @@
       const name = document.querySelector('[name="name"]').value.trim();
       const comment = document.querySelector('[name="comment"]').value.trim();
 
-      if (comment.includes("完全クリア")) {
+      if (comment.includes("ゆっくりしていってね！！！")) {
         if (name !== "") {
           localStorage.setItem("maruten_clear_name", name);
           window.location.href = "clear.html";
@@ -68,7 +68,7 @@
           alert("お名前を入力してください！");
         }
       } else {
-        alert("コメント送信ありがとうございます！（※実際には送信されません）");
+        alert("コメントありがとうございます！（※実際には送信されません）");
       }
     }
   </script>
