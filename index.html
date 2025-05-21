@@ -60,7 +60,7 @@
       const name = document.querySelector('[name="name"]').value.trim();
       const comment = document.querySelector('[name="comment"]').value.trim();
 
-      if (comment.includes("ゆっくりしていってね！！！")) {
+      if (comment.includes("ゆっくりしていってね")) {
         if (name !== "") {
           localStorage.setItem("maruten_clear_name", name);
           window.location.href = "clear.html";
