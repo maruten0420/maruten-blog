@@ -105,6 +105,27 @@
         <button onclick="checkAnswer(6)">答える！</button>
       </div>
 
+      <div class="nazo">
+        <h2>まるてん08</h2>
+        <img src="img/picture07.png" alt="謎08の画像">
+        <input type="text" id="answer7" placeholder="ここに答えを入力">
+        <button onclick="checkAnswer(7)">答える！</button>
+      </div>
+
+      <div class="nazo">
+        <h2>まるてん09</h2>
+        <img src="img/picture08.png" alt="謎09の画像">
+        <input type="text" id="answer8" placeholder="ここに答えを入力">
+        <button onclick="checkAnswer(8)">答える！</button>
+      </div>
+
+      <div class="nazo">
+        <h2>まるてん10</h2>
+        <img src="img/picture09.png" alt="謎10の画像">
+        <input type="text" id="answer9" placeholder="ここに答えを入力">
+        <button onclick="checkAnswer(9)">答える！</button>
+      </div>
+
       <!-- 謎 3（追加したい場合） -->
       <!--
       <div class="nazo">
@@ -127,16 +148,22 @@
       3: ["offense", "OFFENSE"],
       4: ["rail", "RAIL"],
       5: ["こんぱす", "コンパス"],
-      6: ["おにいさん", "オニイサン", "お兄さん", "御兄さん"]
+      6: ["おにいさん", "オニイサン", "お兄さん", "御兄さん"],
+      7: ["はむ", "ハム"],
+      8: ["澄まし汁", "すましじる", "スマシジル", "澄し汁", "すまし汁"],
+      9: ["くろじはば", "クロジハバ", "黒字幅"],
     };
 
     const comments = {
-      1: "正解！ 1/10 ひてゅ",
-      2: "正解！ 2/10 という",
-      3: "正解！ 3/10 こっり",
-      4: "正解！ 4/10 とてょ",
-      5: "正解！ 5/10 にねく",
-      6: "正解！ 6/10 ゆ！し"
+      1: "正解！ 1/9 うしひ",
+      2: "正解！ 1/9 りてと",
+      3: "正解！ 1/9 ょいこ",
+      4: "正解！ 1/9 くっと",
+      5: "正解！ 1/9 してに",
+      6: "正解！ 1/9 なねゆ",
+      7: "正解！ 1/9 さとっ",
+      8: "正解！ 1/9 いにく",
+      9: "正解！ 1/9 。ゅり",
     };
 
     function checkAnswer(id) {
