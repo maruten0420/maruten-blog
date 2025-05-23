@@ -49,18 +49,6 @@
     .nazo button:hover {
       background-color: #ffe6ff;
     }
-
-    /* スマホ対応 */
-    @media (max-width: 768px) {
-      .nazo input[type="text"] {
-        width: 90%;
-      }
-      
-      .nazo button {
-        padding: 8px 12px;
-        font-size: 1em;
-      }
-    }
   </style>
 </head>
 <body>
@@ -83,7 +71,7 @@
 
       <!-- 謎 2 -->
       <div class="nazo">
-        <h2>まるテン03</h2>
+        <h2>まるてん03</h2>
         <img src="img/picture02.png" alt="謎03の画像">
         <input type="text" id="answer2" placeholder="ここに答えを入力">
         <button onclick="checkAnswer(2)">答える！</button>
@@ -111,7 +99,7 @@
       </div>
 
       <div class="nazo">
-        <h2>まるテン07</h2>
+        <h2>まるてん07</h2>
         <img src="img/picture06.PNG" alt="謎07の画像">
         <input type="text" id="answer6" placeholder="ここに答えを入力">
         <button onclick="checkAnswer(6)">答える！</button>
@@ -138,50 +126,144 @@
         <button onclick="checkAnswer(9)">答える！</button>
       </div>
 
+      <!-- 謎 3（追加したい場合） -->
+      <!--
+      <div class="nazo">
+        <h2>まるてん02</h2>
+        <img src="img/picture02.png" alt="謎02の画像">
+        <input type="text" id="answer2" placeholder="ここに答えを入力">
+        <button onclick="checkAnswer(2)">答える！</button>
+      </div>
+      -->
+
     </div>
 
     <p class="footer">© 2025 Maruten</p>
   </div>
 
-  <script>
-    // 不正解音を生成する関数
-    function playIncorrectSound() {
-      try {
-        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-        
-        // ブザー音を作成
-        const oscillator = audioContext.createOscillator();
-        const gainNode = audioContext.createGain();
-        
-        oscillator.connect(gainNode);
-        gainNode.connect(audioContext.destination);
-        
-        oscillator.frequency.setValueAtTime(200, audioContext.currentTime);
-        oscillator.frequency.setValueAtTime(150, audioContext.currentTime + 0.1);
-        oscillator.frequency.setValueAtTime(100, audioContext.currentTime + 0.2);
-        
-        oscillator.type = 'sawtooth';
-        gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
-        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3);
-        
-        oscillator.start(audioContext.currentTime);
-        oscillator.stop(audioContext.currentTime + 0.3);
-      } catch (e) {
-        console.log('Audio not supported');
-      }
-    }
+<script>
+  const answers = {
+    1: ["さしば", "サシバ", "差し歯"],
+    2: ["かしら", "カシラ", "頭"],
+    3: ["offense", "OFFENSE"],
+    4: ["rail", "RAIL"],
+    5: ["こんぱす", "コンパス"],
+    6: ["おにいさん", "オニイサン", "お兄さん", "御兄さん"],
+    7: ["はむ", "ハム"],
+    8: ["澄まし汁", "すましじる", "スマシジル", "澄し汁", "すまし汁"],
+    9: ["くろじはば", "クロジハバ", "黒字幅"]
+  };
 
-    // 正解音を生成する関数
-    function playCorrectSound() {
-      try {
-        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-        
-        // ピロリン音を作成
-        const oscillator = audioContext.createOscillator();
-        const gainNode = audioContext.createGain();
-        
-        oscillator.connect(gainNode);
-        gainNode.connect(audioContext.destination);
-        
-        oscillator.frequency.setValueAtTime(523, audioContext.currentTime); // C5
-        oscillator.frequency.setValueAtTime(659, audio
+  const comments = {
+    1: "正解！ 1/9 うしひ",
+    2: "正解！ 2/9 りてと",
+    3: "正解！ 3/9 ょいこ",
+    4: "正解！ 4/9 くっと",
+    5: "正解！ 5/9 してに",
+    6: "正解！ 6/9 なねゆ",
+    7: "正解！ 7/9 さとっ",
+    8: "正解！ 8/9 いにく",
+    9: "正解！ 9/9 。ゅり"
+  };
+
+  function checkAnswer(id) {
+    const input = document.getElementById("answer" + id).value.trim();
+    if (answers[id] && answers[id].includes(input)) {
+      playCorrectSound();
+      alert(comments[id]);
+    } else {
+      playIncorrectSound();
+      alert("不正解！もう一度考えてね～");
+    }
+  }
+
+  // 正解音
+  function playCorrectSound() {
+    try {
+      const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      const oscillator = audioContext.createOscillator();
+      const gainNode = audioContext.createGain();
+      oscillator.connect(gainNode);
+      gainNode.connect(audioContext.destination);
+      oscillator.frequency.setValueAtTime(523, audioContext.currentTime); // C5
+      oscillator.frequency.setValueAtTime(659, audioContext.currentTime + 0.1); // E5
+      oscillator.type = 'sine';
+      gainNode.gain.setValueAtTime(0.2, audioContext.currentTime);
+      gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3);
+      oscillator.start(audioContext.currentTime);
+      oscillator.stop(audioContext.currentTime + 0.4);
+    } catch (e) {
+      console.log('Audio not supported');
+    }
+  }
+
+  // 不正解音
+  function playIncorrectSound() {
+    try {
+      const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      const oscillator = audioContext.createOscillator();
+      const gainNode = audioContext.createGain();
+      oscillator.connect(gainNode);
+      gainNode.connect(audioContext.destination);
+      oscillator.frequency.setValueAtTime(200, audioContext.currentTime);
+      oscillator.frequency.setValueAtTime(150, audioContext.currentTime + 0.1);
+      oscillator.frequency.setValueAtTime(100, audioContext.currentTime + 0.2);
+      oscillator.type = 'sawtooth';
+      gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+      gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3);
+      oscillator.start(audioContext.currentTime);
+      oscillator.stop(audioContext.currentTime + 0.3);
+    } catch (e) {
+      console.log('Audio not supported');
+    }
+  }
+</script>
+
+  <script>
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+    alert("右クリック禁止！答えが書いてあるからね！！");
+  });
+  </script>
+
+  <script>
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "F12" || (e.ctrlKey && e.shiftKey && e.key === "I")) {
+      e.preventDefault();
+      alert("F12禁止！そこまで実行しなくていいから！");
+    }
+  });
+</script>
+
+<script>
+  let lastTrailTime = 0;
+
+  document.addEventListener("mousemove", function(e) {
+    const now = Date.now();
+
+    // 0.1秒（100ms）以上経過していれば実行
+    if (now - lastTrailTime > 50) {
+      lastTrailTime = now;
+
+      const plus = document.createElement("div");
+      plus.className = "plus-trail";
+
+      // ランダムな原色
+      const colors = ["#ff0000", "#00cc00", "#0000ff", "#ffff00", "#ff00ff", "#00ffff"];
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      plus.style.color = color;
+
+      plus.style.left = `${e.pageX - 10}px`;
+      plus.style.top = `${e.pageY - 10}px`;
+      document.body.appendChild(plus);
+
+      setTimeout(() => {
+        plus.remove();
+      }, 1000); // アニメーション後に削除
+    }
+  });
+</script>
+
+
+</body>
+</html>
