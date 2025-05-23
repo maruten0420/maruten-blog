@@ -40,6 +40,34 @@
     </div>
 
     <hr>
+        <!-- 更新履歴セクション追加 -->
+    <div class="update-history">
+      <h2>🌟 更新履歴 🌟</h2>
+      <div class="history-content">
+        <p> 2010-05-25 ブログ開設！<br>
+            2011-05-25 謎解き問題更新！(｡◕‿◕｡)ﾉ<br>
+            2012-03-14 デザインリニューアル！<br>
+      </div>
+    </div>
+    <hr>
+
+    <div class="link-collection">
+      <h2>🔗 リンク集（？）</h2>
+      <ul>
+        <li><a href="javascript:void(0)" style="color: blue; text-decoration: underline;">謎解き制作団体 RIDDLES</a></li>
+        <li><a href="javascript:void(0)" style="color: blue; text-decoration: underline;">FLASH発掘隊</a></li>
+        <li><a href="javascript:void(0)" style="color: blue; text-decoration: underline;">平成雑談会</a></li>
+        <li><a href="javascript:void(0)" style="color: blue; text-decoration: underline;">夜更かし探偵団</a></li>
+      </ul>
+      <p style="font-size: 0.9em;">（全部うそリンクです、すみません！）</p>
+    </div>
+
+    <p class="contact">
+      📮 相互リンク希望はメールで → <a href="mailto:■■■■■@nazomail.com">■■■■■@nazomail.com</a>
+    </p>
+
+
+    <hr>
 
     <div class="kiri-section">
       <h2>🌟 コメント・キリ番報告はこちら！🌟</h2>
@@ -124,16 +152,30 @@
 
 <script>
   document.addEventListener("click", function(e) {
-  const ripple = document.createElement("div");
-  ripple.className = "click-ripple";
-  ripple.style.left = `${e.clientX}px`;
-  ripple.style.top = `${e.clientY}px`;
+    const star = document.createElement("div");
+    star.textContent = "★";
+    star.style.position = "fixed";
+    star.style.left = `${e.clientX}px`;
+    star.style.top = `${e.clientY}px`;
+    star.style.fontSize = `${Math.random() * 24 + 16}px`;
+    star.style.color = ["#ff0000", "#00cc00", "#0000ff", "#ffff00", "#ff00ff", "#00ffff"][Math.floor(Math.random() * 6)];
+    star.style.pointerEvents = "none";
+    star.style.transform = `rotate(${Math.random() * 360}deg)`;
+    star.style.opacity = 1;
+    star.style.transition = "all 1s ease-out";
+    document.body.appendChild(star);
 
-  document.body.appendChild(ripple);
-  setTimeout(() => ripple.remove(), 1000);
-});
+    requestAnimationFrame(() => {
+      star.style.top = `${e.clientY - 100}px`;
+      star.style.opacity = 0;
+    });
 
+    setTimeout(() => {
+      star.remove();
+    }, 1000);
+  });
 </script>
+
 
 </body>
 </html>
