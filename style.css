@@ -72,6 +72,98 @@ h1 {
   color: #ff0066;
 }
 
+/* 更新履歴セクション */
+.update-history {
+  margin: 20px 0;
+  padding: 15px;
+  background: linear-gradient(135deg, #fff0f5, #f0f8ff);
+  border: 3px ridge #ff69b4;
+  border-radius: 10px;
+}
+
+.update-history h2 {
+  text-align: center;
+  color: #ff1493;
+  text-shadow: 1px 1px 2px #ffb6c1;
+  margin-bottom: 15px;
+  font-size: 1.4em;
+}
+
+.history-content {
+  background: #fffaff;
+  padding: 10px;
+  border: 1px dotted #dda0dd;
+  font-size: 0.95em;
+  line-height: 1.6;
+}
+
+/* リンク集セクション */
+.link-collection {
+  margin: 20px 0;
+  padding: 15px;
+  background: linear-gradient(135deg, #f0fff0, #f5fffa);
+  border: 3px groove #32cd32;
+  border-radius: 8px;
+}
+
+.link-collection h2 {
+  text-align: center;
+  color: #228b22;
+  text-shadow: 1px 1px 2px #90ee90;
+  margin-bottom: 15px;
+  font-size: 1.4em;
+}
+
+.links-content {
+  background: #fafffa;
+  padding: 12px;
+  border: 1px solid #98fb98;
+}
+
+.retro-links {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.retro-links li {
+  margin-bottom: 8px;
+  padding: 5px;
+  background: linear-gradient(90deg, #f0fff0, #ffffff);
+  border-left: 4px solid #32cd32;
+  font-size: 0.9em;
+}
+
+.retro-links a {
+  color: #0066cc;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.retro-links a:hover {
+  color: #ff6600;
+  background-color: #ffffcc;
+}
+
+.link-request {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 0.9em;
+  color: #555;
+}
+
+/* 点滅テキスト */
+.blink-text {
+  animation: blink 1.5s infinite;
+  color: #ff0000;
+  font-weight: bold;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
 .kiri-section {
   margin-top: 30px;
   padding: 10px;
@@ -132,7 +224,7 @@ h1 {
   position: absolute;
   font-weight: bold;
   font-size: 20px;
-  color: #ff0000; /* 初期値（上書きされます） */
+  color: #ff0000;
   pointer-events: none;
   animation: fallWobble 1s ease-out forwards;
   z-index: 9999;
@@ -165,14 +257,14 @@ h1 {
 
 .hidden-link {
   position: absolute;
-  top: 50px; /* 適宜調整 */
-  left: 100px; /* 適宜調整 */
-  color: #fff8f0; /* 背景と同色で見えなくする */
+  top: 50px;
+  left: 100px;
+  color: #fff8f0;
   text-decoration: none;
   z-index: 10;
 }
 .hidden-link:hover {
-  color: #ff99cc; /* ホバーで発見しやすくするなど調整可 */
+  color: #ff99cc;
 }
 
 .click-ripple {
@@ -194,4 +286,26 @@ h1 {
   }
 }
 
-
+/* スマホ対応 */
+@media (max-width: 768px) {
+  .container {
+    margin: 10px;
+    padding: 15px;
+  }
+  
+  h1 {
+    font-size: 2em;
+  }
+  
+  .counter .number {
+    font-size: 2em;
+  }
+  
+  .retro-links li {
+    font-size: 0.85em;
+  }
+  
+  .history-content {
+    font-size: 0.9em;
+  }
+}
