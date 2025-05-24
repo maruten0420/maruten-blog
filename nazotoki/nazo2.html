@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>謎置き場-裏</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: "MS PGothic", sans-serif;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .nazo {
+      background: #111;
+      border: 2px dashed #555;
+      padding: 15px;
+      margin-bottom: 30px;
+    }
+
+    .nazo h2 {
+      color: #ccc;
+      margin-bottom: 10px;
+    }
+
+    .nazo img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto 10px;
+      border: 1px solid #999;
+    }
+
+    .nazo input[type="text"] {
+      width: 80%;
+      padding: 5px;
+      font-size: 1em;
+      background: #000;
+      color: #0f0;
+      border: 1px solid #0f0;
+    }
+
+    .nazo button {
+      margin-top: 5px;
+      padding: 5px 10px;
+      background: #222;
+      color: #fff;
+      border: 1px solid #888;
+      cursor: pointer;
+    }
+
+    .nazo button:hover {
+      background: #444;
+    }
+
+    .footer {
+      margin-top: 40px;
+      font-size: 0.9em;
+      text-align: center;
+      color: #777;
+    }
+
+    .warning {
+      font-size: 1.1em;
+      color: #f88;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>謎置き場（開発中）</h1>
+    <p class="warning">※ここは一応テスト中の裏ページです…</p>
+
+    <div class="nazo">
+      <h2>テスト謎A</h2>
+      <img src="img/test01.png" alt="謎画像A">
+      <input type="text" id="answer1" placeholder="答えを入力">
+      <button onclick="checkAnswer(1)">答える</button>
+    </div>
+
+    <div class="nazo">
+      <h2>テスト謎B</h2>
+      <img src="img/test02.png" alt="謎画像B">
+      <input type="text" id="answer2" placeholder="答えを入力">
+      <button onclick="checkAnswer(2)">答える</button>
+    </div>
+
+    <p class="footer">© 2025 Maruten | このページは未整備です（かも）</p>
+  </div>
+
+  <script>
+    const answers = {
+      1: ["テスト", "てすと"],
+      2: ["debug", "デバッグ"]
+    };
+
+    const comments = {
+      1: "正解！でも…これはただのダミーです。",
+      2: "正解！実はまだ本番じゃないんです…"
+    };
+
+    function checkAnswer(id) {
+      const input = document.getElementById("answer" + id).value.trim();
+      if (answers[id]?.includes(input)) {
+        alert(comments[id]);
+      } else {
+        alert("ん～ それじゃないかも…");
+      }
+    }
+  </script>
+</body>
+</html>
