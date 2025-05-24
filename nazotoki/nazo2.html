@@ -108,15 +108,61 @@
       2: "正解！実はまだ本番じゃないんです…"
     };
 
-    function checkAnswer(id) {
-      const input = document.getElementById("answer" + id).value.trim();
-      if (answers[id]?.includes(input)) {
-        alert(comments[id]);
-      } else {
-        alert("残念！");
+    <script>
+      function checkAnswer(id) {
+        const input = document.getElementById("answer" + id).value.trim();
+        if (answers[id] && answers[id].includes(input)) {
+          playCorrectSound();
+          alert(comments[id]);
+        } else {
+          playIncorrectSound();
+          alert("不正解！もう一度考えてね～");
+        }
       }
+
+      // 正解音
+  function playCorrectSound() {
+    try {
+      const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      const oscillator = audioContext.createOscillator();
+      const gainNode = audioContext.createGain();
+      oscillator.connect(gainNode);
+      gainNode.connect(audioContext.destination);
+      oscillator.frequency.setValueAtTime(523, audioContext.currentTime); // C5
+      oscillator.frequency.setValueAtTime(659, audioContext.currentTime + 0.1); // E5
+      oscillator.type = 'sine';
+      gainNode.gain.setValueAtTime(0.2, audioContext.currentTime);
+      gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3);
+      oscillator.start(audioContext.currentTime);
+      oscillator.stop(audioContext.currentTime + 0.4);
+    } catch (e) {
+      console.log('Audio not supported');
     }
+  }
+
+  // 不正解音
+  function playIncorrectSound() {
+    try {
+      const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      const oscillator = audioContext.createOscillator();
+      const gainNode = audioContext.createGain();
+      oscillator.connect(gainNode);
+      gainNode.connect(audioContext.destination);
+      oscillator.frequency.setValueAtTime(200, audioContext.currentTime);
+      oscillator.frequency.setValueAtTime(150, audioContext.currentTime + 0.1);
+      oscillator.frequency.setValueAtTime(100, audioContext.currentTime + 0.2);
+      oscillator.type = 'sawtooth';
+      gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+      gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3);
+      oscillator.start(audioContext.currentTime);
+      oscillator.stop(audioContext.currentTime + 0.3);
+    } catch (e) {
+      console.log('Audio not supported');
+    }
+  }
+
   </script>
+  
   <script>
   let lastTrailTime = 0;
 
