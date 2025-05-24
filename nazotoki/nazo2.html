@@ -77,24 +77,24 @@
 </head>
 <body>
   <div class="container">
-    <h1>謎置き場（開発中）</h1>
-    <p class="warning">※ここは一応テスト中の裏ページです…</p>
+    <h1>謎置き場</h1>
+    <p class="warning">※ここは裏ページです、がんばれ！</p>
 
     <div class="nazo">
-      <h2>テスト謎A</h2>
-      <img src="img/test01.png" alt="謎画像A">
+      <h2>まるてん11</h2>
+      <img src="img/test01.png" alt="まるてん11">
       <input type="text" id="answer1" placeholder="答えを入力">
       <button onclick="checkAnswer(1)">答える</button>
     </div>
 
     <div class="nazo">
-      <h2>テスト謎B</h2>
-      <img src="img/test02.png" alt="謎画像B">
+      <h2>まるてん12</h2>
+      <img src="img/test02.png" alt="まるてん12">
       <input type="text" id="answer2" placeholder="答えを入力">
       <button onclick="checkAnswer(2)">答える</button>
     </div>
 
-    <p class="footer">© 2025 Maruten | このページは未整備です（かも）</p>
+    <p class="footer">© 2025 Maruten | このページは未整備です</p>
   </div>
 
   <script>
@@ -113,7 +113,7 @@
       if (answers[id]?.includes(input)) {
         alert(comments[id]);
       } else {
-        alert("ん～ それじゃないかも…");
+        alert("残念！");
       }
     }
   </script>
