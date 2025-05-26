@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>裏面クリア！</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      text-align: center;
+      background-color: #000;
+      color: #fff;
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .container {
+      margin-top: 100px;
+      padding: 0 20px;
+    }
+
+    #message {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 2em;
+      line-height: 1.6;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      white-space: normal;
+    }
+
+    #nameLine {
+      font-weight: bold;
+      font-size: clamp(1.2em, 5vw, 2em);
+    }
+
+    #discordLine {
+      margin-top: 20px;
+      font-size: 1.2em;
+    }
+
+    .petal {
+      position: fixed;
+      top: -20px;
+      font-size: 24px;
+      pointer-events: none;
+      z-index: 9999;
+      animation: fall 5s linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="message">
+      <div id="nameLine">裏面クリアおめでとう！</div>
+      <div id="discordLine">Discordに『「まるてんblog-裏　ネットミーム』と書いて自慢しよう！</div>
+    </div>
+  </div>
+
+  <script>
+    function createPetal() {
+      const petal = document.createElement('div');
+      petal.className = 'petal';
+      petal.textContent = '❄'; // 雪（花びらなら '🌸' に変えてもOK）
+      petal.style.left = Math.random() * 100 + 'vw';
+      petal.style.animationDuration = (Math.random() * 2 + 3) + 's';
+      petal.style.fontSize = (Math.random() * 16 + 16) + 'px';
+      document.body.appendChild(petal);
+      setTimeout(() => petal.remove(), 6000);
+    }
+
+    setInterval(createPetal, 200);
+  </script>
+</body>
+</html>
