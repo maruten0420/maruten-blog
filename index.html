@@ -67,9 +67,9 @@
     </div>
 
     <p class="contact">
-      📮 相互リンク希望はメールで → <a href="mailto:■■■■■@nazomail.com">■■■■■@nazomail.com</a>
+      <span id="postmark">📮</span> 相互リンク希望はメールで → 
+      <a href="mailto:■■■■■@nazomail.com">■■■■■@nazomail.com</a>
     </p>
-
 
     <hr>
 
@@ -177,6 +177,26 @@
     setTimeout(() => {
       star.remove();
     }, 1000);
+  });
+</script>
+
+<script>
+  let clickCount = 0;
+  let clickTimer = null;
+
+  document.getElementById("postmark").addEventListener("click", function() {
+    clickCount++;
+
+    if (clickCount === 8) {
+      window.location.href = "clear2.html";
+      return;
+    }
+
+    // 3秒以内に8回押さないとリセット
+    clearTimeout(clickTimer);
+    clickTimer = setTimeout(() => {
+      clickCount = 0;
+    }, 3000);
   });
 </script>
 
