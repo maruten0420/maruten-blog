@@ -56,20 +56,34 @@ h1 {
 
 .menu-link a {
   display: block;
-  background-color: #ccffff;
-  padding: 10px;
+  background: linear-gradient(to bottom, #ccffff 0%, #aaffff 50%, #ccffff 100%);
+  padding: 15px 20px;
   text-align: center;
   color: #0000cc;
   font-weight: bold;
+  font-size: 16px;
   text-decoration: none;
-  border: 2px solid #00cccc;
+  border: 3px solid;
+  border-color: #ffffff #999999 #999999 #ffffff;
   margin: 20px 0;
-  transition: background-color 0.3s ease;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+  box-shadow: 2px 2px 4px #999999;
+  text-shadow: 1px 1px 0px #ffffff;
 }
 
 .menu-link a:hover {
-  background-color: #99ffff;
+  background: linear-gradient(to bottom, #99ffff 0%, #77ffff 50%, #99ffff 100%);
   color: #ff0066;
+  border-color: #ffffff #666666 #666666 #ffffff;
+  box-shadow: 4px 4px 8px #777777;
+  transform: translate(-1px, -1px);
+}
+
+.menu-link a:active {
+  border-style: inset;
+  box-shadow: 1px 1px 2px #999999 inset;
+  transform: translate(1px, 1px);
 }
 
 /* 更新履歴セクション */
