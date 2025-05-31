@@ -1,3 +1,73 @@
+<!--
+コードの中身は見ないでね！
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-->
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -199,93 +269,94 @@
   </div>
 
   <script>
-    // 文字コード配列として保存された答えデータ
-    const _0x4a2b = {
-       1: [[12354,12425,12377,12376], [12450,12521,12473,12472], [31895,31563], [33618,31563]],
-       2: [[12363,12371,12365,12421,12358], [12459,12467,12461,12517,12454], [36942,21628,21560]], 
-       3: [[12377,12435,12371,12367], [12473,12531,12467,12463], [23544,21051]],
-       4: [[12365,12376,12400,12392], [12461,12472,12496,12488]],
-       5: [[12367,12435,12379,12356,12365], [12463,12531,12475,12452,12461], [29134,35069,27231], [29134,35069,22120]],
-       6: [[12495,12531,12489,12523], [12399,12435,12393,12427]],
-       7: [[12375,12362,12398,12417], [22622,37326,30446], [28526,12398,30446], [12471,12458,12494,12513]],
-       8: [[12426,12407,12425,12356], [12522,12503,12521,12452]],
-       9: [[12356,12418,12395], [12452,12514,12491], [33421,29038]],
-      10: [[12394,12413,12426,12383,12435], [12490,12509,12522,12479,12531]],
-      11: [[12425,12387,12385], [12521,12387,12481]],
-      12: [[12505,12540,12471,12483,12463], [12409,12540,12375,12387,12367], [98,97,115,105,99], [66,97,115,105,99], [66,65,83,73,67]],
-      13: [[12363,12383,12385], [12459,12479,12481], [24418]],
-      14: [[12426,12360,12365], [12522,12456,12461], [21033,30410]],
-      15: [[12405,12392,12371,12429], [12501,12488,12467,12525], [61670]]
+    const answers = {
+       1: ["あらすじ", "アラスジ", "粗筋", "荒筋"],
+       2: ["かこきゅう", "カコキュウ", "過呼吸"], 
+       3: ["すんこく", "スンコク", "寸刻"],
+       4: ["きじばと", "キジバト"],
+       5: ["くんせいき", "クンセイキ", "燻製機", "燻製器"],
+       6: ["ハンドル", "はんどる"],
+       7: ["しおのめ", "塩野目", "潮の目", "シオノメ"],
+       8: ["りぷらい", "リプライ"],
+       9: ["いもに", "イモニ", "芋煮"],
+      10: ["なぽりたん", "ナポリタン"],
+      11: ["らっち", "ラッチ"],
+      12: ["ベーシック", "べーしっく", "basic", "Basic", "BASIC"],
+      13: ["かたち", "カタチ", "形"],
+      14: ["りえき", "リエキ", "利益"],
+      15: ["ふところ", "フトコロ", "懐"],
     };
 
-    const _0x8c1f = {
-       1: [27491,35299,65281], 2: [27491,35299,65281], 3: [27491,35299,65281], 4: [27491,35299,65281], 5: [27491,35299,65281],
-       6: [27491,35299,65281], 7: [27491,35299,65281], 8: [27491,35299,65281], 9: [27491,35299,65281], 10: [27491,35299,65281],
-      11: [27491,35299,65281], 12: [27491,35299,65281], 13: [27491,35299,65281], 14: [27491,35299,65281], 15: [27491,35299,65281]
+    const comments = {
+       1: "正解！",
+       2: "正解！",
+       3: "正解！",
+       4: "正解！",
+       5: "正解！",
+       6: "正解！",
+       7: "正解！",
+       8: "正解！",
+       9: "正解！",
+      10: "正解！",
+      11: "正解！",
+      12: "正解！",
+      13: "正解！",
+      14: "正解！",
+      15: "正解！"
     };
-
-    function _0x9d3a(arr) {
-      return arr.map(code => String.fromCharCode(code)).join('');
-    }
-
-    function _0x2e5b(id) {
-      return _0x4a2b[id] ? _0x4a2b[id].map(arr => _0x9d3a(arr)) : [];
-    }
-
-    function _0x7f1c(id) {
-      return _0x8c1f[id] ? _0x9d3a(_0x8c1f[id]) : "";
-    }
     
-    function checkAnswer(id) {
-      const input = document.getElementById("answer" + id).value.trim();
-      const validAnswers = _0x2e5b(id);
-      if (validAnswers.includes(input)) {
-        playCorrectSound();
-        alert(_0x7f1c(id));
-      } else {
-        playIncorrectSound();
-        alert(_0x9d3a([19981,27491,35299,65281,12418,12358,19968,24230,32771,12360,12390,12390,65374]));
+      function checkAnswer(id) {
+        const input = document.getElementById("answer" + id).value.trim();
+        if (answers[id] && answers[id].includes(input)) {
+          playCorrectSound();
+          alert(comments[id]);
+        } else {
+          playIncorrectSound();
+          alert("不正解！もう一度考えてね～");
+        }
       }
-    }
 
-    function playCorrectSound() {
-      try {
-        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-        const oscillator = audioContext.createOscillator();
-        const gainNode = audioContext.createGain();
-        oscillator.connect(gainNode);
-        gainNode.connect(audioContext.destination);
-        oscillator.frequency.setValueAtTime(523, audioContext.currentTime);
-        oscillator.frequency.setValueAtTime(659, audioContext.currentTime + 0.1);
-        oscillator.type = 'sine';
-        gainNode.gain.setValueAtTime(0.2, audioContext.currentTime);
-        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3);
-        oscillator.start(audioContext.currentTime);
-        oscillator.stop(audioContext.currentTime + 0.4);
-      } catch (e) {
-        console.log('Audio not supported');
-      }
+      // 正解音
+  function playCorrectSound() {
+    try {
+      const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      const oscillator = audioContext.createOscillator();
+      const gainNode = audioContext.createGain();
+      oscillator.connect(gainNode);
+      gainNode.connect(audioContext.destination);
+      oscillator.frequency.setValueAtTime(523, audioContext.currentTime); // C5
+      oscillator.frequency.setValueAtTime(659, audioContext.currentTime + 0.1); // E5
+      oscillator.type = 'sine';
+      gainNode.gain.setValueAtTime(0.2, audioContext.currentTime);
+      gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3);
+      oscillator.start(audioContext.currentTime);
+      oscillator.stop(audioContext.currentTime + 0.4);
+    } catch (e) {
+      console.log('Audio not supported');
     }
+  }
 
-    function playIncorrectSound() {
-      try {
-        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-        const oscillator = audioContext.createOscillator();
-        const gainNode = audioContext.createGain();
-        oscillator.connect(gainNode);
-        gainNode.connect(audioContext.destination);
-        oscillator.frequency.setValueAtTime(200, audioContext.currentTime);
-        oscillator.frequency.setValueAtTime(150, audioContext.currentTime + 0.1);
-        oscillator.frequency.setValueAtTime(100, audioContext.currentTime + 0.2);
-        oscillator.type = 'sawtooth';
-        gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
-        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3);
-        oscillator.start(audioContext.currentTime);
-        oscillator.stop(audioContext.currentTime + 0.3);
-      } catch (e) {
-        console.log('Audio not supported');
-      }
+  // 不正解音
+  function playIncorrectSound() {
+    try {
+      const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      const oscillator = audioContext.createOscillator();
+      const gainNode = audioContext.createGain();
+      oscillator.connect(gainNode);
+      gainNode.connect(audioContext.destination);
+      oscillator.frequency.setValueAtTime(200, audioContext.currentTime);
+      oscillator.frequency.setValueAtTime(150, audioContext.currentTime + 0.1);
+      oscillator.frequency.setValueAtTime(100, audioContext.currentTime + 0.2);
+      oscillator.type = 'sawtooth';
+      gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+      gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3);
+      oscillator.start(audioContext.currentTime);
+      oscillator.stop(audioContext.currentTime + 0.3);
+    } catch (e) {
+      console.log('Audio not supported');
     }
+  }
+
   </script>
   
   <script>
@@ -294,12 +365,14 @@
   document.addEventListener("mousemove", function(e) {
     const now = Date.now();
 
+    // 0.1秒（100ms）以上経過していれば実行
     if (now - lastTrailTime > 50) {
       lastTrailTime = now;
 
       const plus = document.createElement("div");
       plus.className = "plus-trail";
 
+      // ランダムな原色
       const colors = ["#ff0000", "#00cc00", "#0000ff", "#ffff00", "#ff00ff", "#00ffff"];
       const color = colors[Math.floor(Math.random() * colors.length)];
       plus.style.color = color;
@@ -310,7 +383,7 @@
 
       setTimeout(() => {
         plus.remove();
-      }, 1000);
+      }, 1000); // アニメーション後に削除
     }
   });
 </script>
